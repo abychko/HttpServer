@@ -1,5 +1,6 @@
 package org.http.server;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,11 +37,18 @@ class ClientSession implements Runnable {
         }
     }
 
+    /* TODO parse http methods in another object manner */
     private void writeToClient() {
-        String httpMethod;
-        @SuppressWarnings("UnusedAssignment")
-                httpMethod = extractMethod();
+        String httpMethod = extractMethod();
+        String uri = extractURI();
+        ResponseBuilder currentResponse = new ResponseBuilder();
+        currentResponse.buildResponce(httpMethod, uri);
+        currentResponse.writeOutput(mSock);
         closeConnection();
+    }
+
+    private String extractURI() {
+        return this.requestHeaders.get(0).split("\\s+")[1];
     }
 
     private void readFromClient() {
