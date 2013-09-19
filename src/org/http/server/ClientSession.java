@@ -13,6 +13,8 @@ class ClientSession implements Runnable {
 
     private final Socket mSock;
     private List<String> requestHeaders;
+    InputStream inputStream = null;
+
     public ClientSession(Socket clientSock) {
         this.mSock = clientSock;
 
@@ -29,6 +31,11 @@ class ClientSession implements Runnable {
     }
 
     private void closeConnection() {
+        try {
+            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         try {
             this.mSock.close();
         } catch (IOException e) {
@@ -57,9 +64,10 @@ class ClientSession implements Runnable {
     }
 
     private void readFromClient() {
+
         try {
             this.requestHeaders = new ArrayList<String>();
-            InputStream inputStream = mSock.getInputStream();
+            inputStream = mSock.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             while (true) {
                 String header;
@@ -71,6 +79,7 @@ class ClientSession implements Runnable {
                     this.requestHeaders.add(header);
                 }
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -4,7 +4,6 @@
     <list default="true" id="37aab441-93ac-4821-829c-690e6ecd4779" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/http/errors/403.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/http/server/ClientSession.java" afterPath="$PROJECT_DIR$/src/org/http/server/ClientSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/http/server/Main.java" afterPath="$PROJECT_DIR$/src/org/http/server/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/http/server/ResponseBuilder.java" afterPath="$PROJECT_DIR$/src/org/http/server/ResponseBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -87,7 +86,7 @@
       <file leaf-file-name="ClientSession.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/http/server/ClientSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="1170">
+            <state line="16" column="0" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
               <folding />
             </state>
           </provider>
@@ -96,7 +95,7 @@
       <file leaf-file-name="ResponseBuilder.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/http/server/ResponseBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="93" selection-start="5082" selection-end="5082" vertical-scroll-proportion="0.79569894" vertical-offset="1403" max-vertical-offset="2550">
+            <state line="157" column="12" selection-start="5979" selection-end="5979" vertical-scroll-proportion="1.0949285" vertical-offset="1513" max-vertical-offset="2685">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#237#274#1" expanded="true" />
@@ -136,8 +135,8 @@
         <option value="$PROJECT_DIR$/src/org/http/server/Listener.java" />
         <option value="$PROJECT_DIR$/src/org/http/server/ClientOutput.java" />
         <option value="$PROJECT_DIR$/src/org/http/server/403.html" />
-        <option value="$PROJECT_DIR$/src/org/http/server/ClientSession.java" />
         <option value="$PROJECT_DIR$/src/org/http/server/Main.java" />
+        <option value="$PROJECT_DIR$/src/org/http/server/ClientSession.java" />
         <option value="$PROJECT_DIR$/src/org/http/server/ResponseBuilder.java" />
       </list>
     </option>
@@ -539,7 +538,7 @@
       <workItem from="1379492873350" duration="2022000" />
       <workItem from="1379515662600" duration="120000" />
       <workItem from="1379522238700" duration="3677000" />
-      <workItem from="1379562883999" duration="24434000" />
+      <workItem from="1379562883999" duration="26879000" />
     </task>
     <task id="LOCAL-00001" summary="classes were deleted / rewritten. new design">
       <created>1379440126024</created>
@@ -549,11 +548,15 @@
       <created>1379494876809</created>
       <updated>1379494876809</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="looks like done">
+      <created>1379606965345</created>
+      <updated>1379606965346</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70969000" />
+    <option name="totallyTimeSpent" value="73414000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -616,7 +619,10 @@
     </option>
     <MESSAGE value="classes were deleted / rewritten. new design" />
     <MESSAGE value="added response builder" />
-    <option name="LAST_COMMIT_MESSAGE" value="added response builder" />
+    <MESSAGE value="looks like done" />
+    <option name="LAST_COMMIT_MESSAGE" value="looks like done" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -626,13 +632,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/http/server/ClientSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="32" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1185">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/http/server/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="9" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
@@ -718,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/http/server/ClientSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="1170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/http/server/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="8" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
@@ -734,9 +726,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/oracle-jdk-bin-1.7/jre/lib/rt.jar!/java/net/Socket.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="0" selection-start="6135" selection-end="6135" vertical-scroll-proportion="0.8829649" vertical-offset="1511" max-vertical-offset="2280">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/http/server/ClientSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/http/server/ResponseBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="93" selection-start="5082" selection-end="5082" vertical-scroll-proportion="0.79569894" vertical-offset="1403" max-vertical-offset="2550">
+        <state line="157" column="12" selection-start="5979" selection-end="5979" vertical-scroll-proportion="1.0949285" vertical-offset="1513" max-vertical-offset="2685">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#237#274#1" expanded="true" />

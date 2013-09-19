@@ -32,7 +32,7 @@ class ResponseBuilder {
     public void Response() {
         String ROOTDIR = "/srv/www";
         File out = new File(ROOTDIR + _uri);
-        OutputStream outputStream;
+        OutputStream outputStream = null;
         try {
             outputStream = _socket.getOutputStream();
             if (out.exists()) { //200
@@ -45,8 +45,13 @@ class ResponseBuilder {
                         try {
                             outputStream.write(_outHeaders.getBytes());
                             outputStream.write(dirList.getBytes());
+
                         } catch (IOException e) {
                             e.printStackTrace();
+                        } finally {
+                            if (outputStream != null) {
+                                outputStream.close();
+                            }
                         }
                     } else if (out.isFile()) { //is file
                         contentLength = out.length();
@@ -148,9 +153,13 @@ class ResponseBuilder {
     }
 
     private String buildTableRow(String prefix, String item, long size, String type) {
+        String sep = "/";
+        if (_uri.equals("/")) {
+            sep = "";
+        }
         return "\t\t\t\t<tr>\n" +
                 "\t\t\t\t\t<td>" + prefix + "</td>\n" +
-                "\t\t\t\t\t<td><a href=http://" + _host + _uri + File.separator + item + ">" + item + "</td>\n" +
+                "\t\t\t\t\t<td><a href=http://" + _host + _uri.replaceAll("//", "/") + sep + item + ">" + item + "</td>\n" +
                 "\t\t\t\t\t<td>Size: " + size + "</td>\n" +
                 "\t\t\t\t\t<td>" + type + "</td>\n" +
                 "\t\t\t\t</tr>\n";
