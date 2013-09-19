@@ -13,7 +13,6 @@ class ClientSession implements Runnable {
 
     private final Socket mSock;
     private List<String> requestHeaders;
-
     public ClientSession(Socket clientSock) {
         this.mSock = clientSock;
 
@@ -31,7 +30,7 @@ class ClientSession implements Runnable {
 
     private void closeConnection() {
         try {
-            mSock.close();
+            this.mSock.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -39,16 +38,22 @@ class ClientSession implements Runnable {
 
     /* TODO parse http methods in another object manner */
     private void writeToClient() {
-        String httpMethod = extractMethod();
-        String uri = extractURI();
-        ResponseBuilder currentResponse = new ResponseBuilder();
-        currentResponse.buildResponce(httpMethod, uri);
-        currentResponse.writeOutput(mSock);
+        ResponseBuilder responseBuilder = new ResponseBuilder(extractHost(), extractURI(), extractMethod(), mSock);
+        responseBuilder.Response();
         closeConnection();
     }
 
     private String extractURI() {
         return this.requestHeaders.get(0).split("\\s+")[1];
+    }
+
+    private String extractHost() {
+        for (String var : requestHeaders) {
+            if (var.startsWith("Host:")) {
+                return var.split("\\s+")[1];
+            }
+        }
+        return "localhost:8888";
     }
 
     private void readFromClient() {
